@@ -2,7 +2,7 @@ import React from 'react'
 
 const Teams = () => {
     return (
-        <section className="text-gray-600 body-font">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-col text-center w-full mb-20">
                     <h1 className="text-2xl font-medium title-font mb-4 text-gray-900">OUR TEAM</h1>

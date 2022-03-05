@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Statistic from "./components/Statistic";
 import Steps from "./components/Steps";
 import Testimonials from "./components/Testimonials";
+import Teams from "./components/Teams";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Features />
       <Content />
       <Statistic />
+      <Teams />
       <Steps />
       <Testimonials />
       <Gallery />
