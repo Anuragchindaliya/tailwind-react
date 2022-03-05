@@ -10,6 +10,8 @@ import Statistic from "./components/Statistic";
 import Steps from "./components/Steps";
 import Testimonials from "./components/Testimonials";
 import Teams from "./components/Teams";
+import Blog from "./components/Blog";
+import ContactMap from "./components/ContactMap";
 
 function App() {
   return (
@@ -18,12 +20,14 @@ function App() {
       <Hero />
       <Features />
       <Content />
+      <Blog />
       <Statistic />
       <Teams />
       <Steps />
       <Testimonials />
       <Gallery />
       <Cta />
+      <ContactMap />
       <Footer />
     </>
   );
