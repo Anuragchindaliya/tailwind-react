@@ -353,6 +353,7 @@ export default function Example() {
                                     >
                                         <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0">
                                             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                                
                                                 <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                                                     <div>
                                                         <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">Recent Posts</h3>
