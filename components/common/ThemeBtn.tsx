@@ -3,10 +3,9 @@ import useDarkMode from "../Hooks/useDarkMode";
 import NoSsr from "./NoSsr";
 const ThemeBtn = () => {
   const { isDarkMode, toggle } = useDarkMode();
-  const colorTheme = isDarkMode ? "dark" : "light";
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.remove(colorTheme);
+    root.classList.remove(isDarkMode ? "dark" : "light");
     root.classList.add(!isDarkMode ? "dark" : "light");
     localStorage.setItem("next-dark", JSON.stringify(isDarkMode));
   }, [isDarkMode]);

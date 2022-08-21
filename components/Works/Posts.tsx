@@ -34,6 +34,7 @@ const Posts = ({ posts }: { posts: PostI[] }) => {
                       <img
                         src={post.frontmatter.cover_image}
                         className="h-full object-cover"
+                        alt="post_thumbnail"
                       />
                     </motion.div>
                     <div>
