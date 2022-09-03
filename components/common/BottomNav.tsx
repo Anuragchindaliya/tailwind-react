@@ -85,7 +85,7 @@ const PhoneIcon = (props: any) => {
       stroke="currentColor"
       // className="h-6 w-6"
       {...prop}
-      >
+    >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -140,10 +140,33 @@ const navList = [
   },
 ];
 const BottomNav = () => {
+  const [lastYPos, setLastYPos] = React.useState(0);
+  const [shouldShowActions, setShouldShowActions] = React.useState(false);
   const { pathname } = useRouter();
   const basePath = pathname === "/" ? pathname : "/" + pathname.split("/")[1];
+
+  React.useEffect(() => {
+    function handleScroll() {
+      const yPos = window.scrollY;
+      const isScrollingUp = yPos < lastYPos;
+
+      setShouldShowActions(isScrollingUp);
+      setLastYPos(yPos);
+    }
+
+    window.addEventListener("scroll", handleScroll, false);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
+  }, [lastYPos]);
   return (
-    <div className="shadow-3xl fixed bottom-1 m-2 flex   w-[96vw]  cursor-pointer   items-center justify-between rounded-2xl   bg-gray-900 p-3 px-6 text-gray-400 dark:bg-gray-800 dark:text-gray-500  lg:hidden">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: shouldShowActions ? 1 : 0 }}
+      transition={{ opacity: { duration: 0.3 } }}
+      className="shadow-3xl fixed bottom-1 m-2 flex   w-[96vw]  cursor-pointer   items-center justify-between rounded-2xl   bg-gray-900 p-3 px-6 text-gray-400 dark:bg-gray-800 dark:text-gray-500  lg:hidden"
+    >
       {navList.map(({ path, icon: Icon }, i) => (
         <Link key={i} href={path}>
           <a
@@ -176,7 +199,7 @@ const BottomNav = () => {
           </a>
         </Link>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
