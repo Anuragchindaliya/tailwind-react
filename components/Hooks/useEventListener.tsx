@@ -40,7 +40,8 @@ function useEventListener<
     event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event
   ) => void,
   element?: RefObject<T>,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
+  isEvent?:boolean 
 ) {
   // Create a ref that stores handler
   const savedHandler = useRef(handler);
@@ -52,7 +53,7 @@ function useEventListener<
   useEffect(() => {
     // Define the listening target
     const targetElement: T | Window = element?.current || window;
-    if (!(targetElement && targetElement.addEventListener)) {
+    if (!(targetElement && targetElement.addEventListener) || isEvent) {
       return;
     }
 

@@ -26,7 +26,7 @@ const Posts = ({ posts }: { posts: PostI[] }) => {
                   <article className="group cursor-pointer">
                     <motion.div
                       //   className=" aspect-square transition-all"
-                      className="relative overflow-hidden rounded-md bg-gray-100    hover:scale-105 dark:bg-gray-800"
+                      className="relative overflow-hidden rounded-md bg-gray-100    transition hover:scale-105 dark:bg-gray-800"
                       layoutId={post.slug + "hero_img"}
                       initial={false}
                       animate={false}

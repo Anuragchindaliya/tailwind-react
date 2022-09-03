@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import useBoolean from "../Hooks/useBoolean";
 import NavLink from "./NavLink";
 import ThemeBtn from "./ThemeBtn";
+import { motion } from "framer-motion";
 const menuList = [
   {
     name: "Home",
@@ -27,14 +29,20 @@ const menuList = [
 ];
 
 const Navbar = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  // const [isMenuOpen, setMenuOpen] = useState(false);
+  const {
+    value: isMenuOpen,
+    setValue: setMenuOpen,
+    toggle: handleMenuOpen,
+  } = useBoolean(false);
+
   const { pathname } = useRouter();
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
-  const handleMenuOpen = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+
+  const basePath = pathname === "/" ? pathname : "/" + pathname.split("/")[1];
+
   return (
     <>
       <div className="flex items-center lg:order-2">
@@ -86,23 +94,35 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-
       <div
+        onClick={() => {
+          setMenuOpen(false);
+        }}
         className={`${
-          isMenuOpen ? "block" : "hidden"
-        } w-full items-center justify-between lg:order-1 lg:flex lg:w-auto`}
+          isMenuOpen ? "top-16 " : "-top-full"
+        } absolute left-0  z-10 h-full w-full items-center justify-between   shadow-primary-900/40 transition-all lg:static lg:order-1  lg:flex lg:w-auto `}
       >
-        <ul className="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-8">
+        <ul
+          onClick={(e) => e.stopPropagation()}
+          className="mt-4 flex flex-col divide-y divide-slate-200 bg-white font-medium shadow-2xl dark:divide-slate-700 dark:bg-gray-800 dark:md:bg-gray-900  lg:mt-0 lg:flex-row lg:space-x-8 lg:divide-y-0 "
+        >
           {menuList.map(({ name, link }, i) => {
             return (
               <li key={i}>
                 <NavLink
                   href={link}
-                  className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
-                  activeClassName="block rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700"
+                  className={`border-5  block border-gray-100 py-3 pr-4  pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white`}
+                  activeClassName="block rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 "
                 >
                   {name}
                 </NavLink>
+                {basePath === link && (
+                  <motion.div
+                    layoutId="md:underline"
+                    transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
+                    className="hidden md:block h-0.5 w-full bg-primary-600 dark:bg-white"
+                  />
+                )}
               </li>
             );
           })}
@@ -164,7 +184,7 @@ const Navbar = () => {
 const Header = () => {
   return (
     <header>
-      <nav className="border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+      <nav className="border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-900 lg:px-6">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
           <Link href="/">
             <a className="flex items-center">
