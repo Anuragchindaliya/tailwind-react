@@ -337,7 +337,6 @@ const CapsuleSlider = () => {
   //     containerEle?.removeEventListener("wheel", onWheel);
   //   };
   // }, []);
-  console.log({ hasScrolled });
   return (
     <>
       <div className="relative flex dark:bg-gray-900" ref={container}>
