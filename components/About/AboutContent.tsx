@@ -23,7 +23,7 @@ const AboutContent = () => {
           </p>
           <a
             href="#"
-            className="text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center font-medium"
+            className="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
           >
             Learn more
             <svg

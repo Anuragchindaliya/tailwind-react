@@ -18,9 +18,9 @@ const Testimonial = () => {
           </svg>
           <blockquote>
             <p className="text-2xl font-medium text-gray-900 dark:text-white">
-              "Tailwind is just awesome. It contains tons of predesigned components
-              and pages starting from login screen to complex dashboard. Perfect
-              choice for your next SaaS application."
+              "Tailwind is just awesome. It contains tons of predesigned
+              components and pages starting from login screen to complex
+              dashboard. Perfect choice for your next SaaS application."
             </p>
           </blockquote>
           <figcaption className="mt-6 flex items-center justify-center space-x-3">

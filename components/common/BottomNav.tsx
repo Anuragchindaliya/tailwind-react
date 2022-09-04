@@ -85,7 +85,7 @@ const PhoneIcon = (props: any) => {
       stroke="currentColor"
       // className="h-6 w-6"
       {...prop}
-      >
+    >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -140,43 +140,72 @@ const navList = [
   },
 ];
 const BottomNav = () => {
+  const [lastYPos, setLastYPos] = React.useState(0);
+  const [shouldShowActions, setShouldShowActions] = React.useState(false);
   const { pathname } = useRouter();
   const basePath = pathname === "/" ? pathname : "/" + pathname.split("/")[1];
+
+  React.useEffect(() => {
+    function handleScroll() {
+      const yPos = window.scrollY;
+      const isScrollingUp = yPos < lastYPos;
+
+      setShouldShowActions(isScrollingUp);
+      setLastYPos(yPos);
+    }
+
+    window.addEventListener("scroll", handleScroll, false);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
+  }, [lastYPos]);
   return (
-    <div className="shadow-3xl fixed bottom-1 m-2 flex   w-[96vw]  cursor-pointer   items-center justify-between rounded-2xl   bg-gray-900 p-3 px-6 text-gray-400 dark:bg-gray-800 dark:text-gray-500  lg:hidden">
-      {navList.map(({ path, icon: Icon }, i) => (
-        <Link key={i} href={path}>
-          <a
-            className={
-              basePath === path
-                ? "text-white "
-                : "" +
-                  " relative flex  flex-col items-center  transition duration-200 ease-in hover:text-blue-400 "
-            }
-          >
-            <Icon
-              {...(basePath === path
-                ? {
-                    className: "shadow-2xl  fill-current h-6 w-6 ",
-                  }
-                : { className: "stroke-current  h-6 w-6 " })}
-            />
-            {basePath === path && (
-              <motion.div
-                layoutId="activeMobileNav"
-                // className="flex flex-col items-center  hover:text-blue-400 "
-                transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-                className="absolute top-0 bottom-0 -z-10  mt-[4px] -ml-[8px] h-10  w-10  rounded-xl   bg-primary-600"
-                // className="absolute bottom-0 border-gray-900 left-0 right-0 -z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 dark:border-gray-50 bg-gray-500 p-2 text-center text-3xl text-white shadow-2xl transition duration-200 ease-in hover:border-blue-500 "
-              >
-                {/* <PhoneIcon />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: shouldShowActions ? 1 : 0 }}
+      transition={{ opacity: { duration: 0.3 } }}
+      className="fixed bottom-0 flex w-full justify-center px-2 py-1 text-gray-400 dark:text-gray-500"
+    >
+      <div
+        className="shadow-3xl   relative flex w-full  items-center justify-between   rounded-2xl bg-gray-900  dark:bg-gray-200 lg:hidden"
+        // [&>a]:first:rounded-l-xl [&>a]:last:rounded-r-xl [&>a]:last:rounded-r-0
+      >
+        {navList.map(({ path, icon: Icon }, i) => (
+          <Link key={i} href={path}>
+            <a
+              className={
+                (basePath === path
+                  ? "text-white "
+                  : "hover:bg-gray-700  hover:text-blue-400 dark:hover:bg-gray-300 dark:hover:text-blue-800") +
+                "  m-1  flex flex-1 flex-col items-center rounded-xl  p-2 transition   duration-200  ease-in"
+                // first:rounded-l-xl last:rounded-r-xl last:rounded-r-0
+              }
+            >
+              <Icon
+                {...(basePath === path
+                  ? {
+                      className: "fill-current h-6 w-6 z-20",
+                    }
+                  : { className: "stroke-current  h-6 w-6 " })}
+              />
+              {basePath === path && (
+                <motion.div
+                  layoutId="activeMobileNav"
+                  // className="flex flex-col items-center  hover:text-blue-400 "
+                  transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+                  className=" absolute top-0 bottom-0  m-1 rounded-xl  bg-primary-600 p-4 px-[11vw] "
+                  // className="sm:px-11 absolute bottom-0 border-gray-900 left-0 right-0 -z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 dark:border-gray-50 bg-gray-500 p-2 text-center text-3xl text-white shadow-2xl transition duration-200 ease-in hover:border-blue-500 "
+                >
+                  {/* <PhoneIcon />
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full border-4 opacity-50" /> */}
-              </motion.div>
-            )}
-          </a>
-        </Link>
-      ))}
-    </div>
+                </motion.div>
+              )}
+            </a>
+          </Link>
+        ))}
+      </div>
+    </motion.div>
   );
 };
 

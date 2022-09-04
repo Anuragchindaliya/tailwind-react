@@ -116,7 +116,7 @@ const Pricing = () => {
             </ul>
             <a
               href="#"
-              className="bg-primary-600 hover:bg-primary-700 focus:ring-primary-200 dark:focus:ring-primary-900 rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4  dark:text-white"
+              className="rounded-lg bg-primary-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 dark:text-white  dark:focus:ring-primary-900"
             >
               Get started
             </a>
@@ -129,9 +129,7 @@ const Pricing = () => {
             </p>
             <div className="my-8 flex items-baseline justify-center">
               <span className="mr-2 text-5xl font-extrabold">$99</span>
-              <span className="text-gray-500 dark:text-gray-400">
-                /month
-              </span>
+              <span className="text-gray-500 dark:text-gray-400">/month</span>
             </div>
             {/* List */}
             <ul role="list" className="mb-8 space-y-4 text-left">
@@ -226,7 +224,7 @@ const Pricing = () => {
             </ul>
             <a
               href="#"
-              className="bg-primary-600 hover:bg-primary-700 focus:ring-primary-200 dark:focus:ring-primary-900 rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4  dark:text-white"
+              className="rounded-lg bg-primary-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 dark:text-white  dark:focus:ring-primary-900"
             >
               Get started
             </a>
@@ -334,7 +332,7 @@ const Pricing = () => {
             </ul>
             <a
               href="#"
-              className="bg-primary-600 hover:bg-primary-700 focus:ring-primary-200 dark:focus:ring-primary-900 rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4  dark:text-white"
+              className="rounded-lg bg-primary-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 dark:text-white  dark:focus:ring-primary-900"
             >
               Get started
             </a>

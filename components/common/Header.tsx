@@ -39,7 +39,7 @@ const Navbar = () => {
   const { pathname } = useRouter();
   useEffect(() => {
     setMenuOpen(false);
-  }, [pathname]);
+  }, [pathname,setMenuOpen]);
 
   const basePath = pathname === "/" ? pathname : "/" + pathname.split("/")[1];
 
@@ -120,7 +120,7 @@ const Navbar = () => {
                   <motion.div
                     layoutId="md:underline"
                     transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-                    className="hidden md:block h-0.5 w-full bg-primary-600 dark:bg-white"
+                    className="hidden h-0.5 w-full bg-primary-600 dark:bg-white md:block"
                   />
                 )}
               </li>
@@ -141,38 +141,6 @@ const Navbar = () => {
                   className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
                 >
                   Company
-                </a>
-              </li> 
-              <li>
-                <a
-                  href="#"
-                  className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
-                >
-                  Marketplace
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
-                >
-                  Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
-                >
-                  Contact
                 </a>
               </li> */}
         </ul>
