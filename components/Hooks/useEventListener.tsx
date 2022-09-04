@@ -41,7 +41,7 @@ function useEventListener<
   ) => void,
   element?: RefObject<T>,
   options?: boolean | AddEventListenerOptions,
-  isEvent?:boolean 
+  isEvent?: boolean
 ) {
   // Create a ref that stores handler
   const savedHandler = useRef(handler);

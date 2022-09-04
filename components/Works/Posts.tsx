@@ -19,7 +19,7 @@ const Posts = ({ posts }: { posts: PostI[] }) => {
 
         <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
           <NoSsr>
-            {posts.map((post,i) => (
+            {posts.map((post, i) => (
               <Post post={post} index={i} key={post.slug} />
             ))}
           </NoSsr>

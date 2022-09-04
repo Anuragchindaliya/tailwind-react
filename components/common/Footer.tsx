@@ -40,18 +40,12 @@ const Footer = () => {
             </h2>
             <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
-                <a
-                  href="#"
-                  className="hover:underline "
-                >
+                <a href="#" className="hover:underline ">
                   Github
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:underline"
-                >
+                <a href="#" className="hover:underline">
                   Discord
                 </a>
               </li>

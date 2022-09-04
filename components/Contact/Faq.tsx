@@ -79,7 +79,7 @@ const Faq = () => {
                 Feel free to{" "}
                 <a
                   href="#"
-                  className="text-primary-600 dark:text-primary-500 font-medium underline hover:no-underline"
+                  className="font-medium text-primary-600 underline hover:no-underline dark:text-primary-500"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -142,7 +142,7 @@ const Faq = () => {
                 The free updates that will be provided is based on the{" "}
                 <a
                   href="#"
-                  className="text-primary-600 dark:text-primary-500 font-medium underline hover:no-underline"
+                  className="font-medium text-primary-600 underline hover:no-underline dark:text-primary-500"
                 >
                   roadmap
                 </a>{" "}
@@ -170,7 +170,7 @@ const Faq = () => {
                 The{" "}
                 <a
                   href="#"
-                  className="text-primary-600 dark:text-primary-500 font-medium underline hover:no-underline"
+                  className="font-medium text-primary-600 underline hover:no-underline dark:text-primary-500"
                 >
                   free version
                 </a>{" "}

@@ -1,5 +1,3 @@
-
-
 export interface PostI {
   slug: string;
   frontmatter: FrontmatterI;

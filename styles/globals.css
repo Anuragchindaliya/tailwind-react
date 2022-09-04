@@ -21,14 +21,14 @@ body::-webkit-scrollbar {
 /* Track */
 body::-webkit-scrollbar-track {
   /* background: rgb(216, 208, 208); */
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
   background: #4065b4;
   border-radius: 7px;
-} 
+}
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {

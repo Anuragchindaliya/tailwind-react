@@ -1,8 +1,4 @@
-import {
-  Dispatch, SetStateAction,
-  useCallback,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useCallback, useState } from "react";
 
 interface ReturnType {
   value: boolean;

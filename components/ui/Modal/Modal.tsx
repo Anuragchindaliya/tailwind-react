@@ -16,7 +16,7 @@ const Modal = ({ show, setShow }: ModalType) => {
         show ? "block" : "hidden"
       } h-modal fixed top-0 right-0 left-0 z-50 h-screen w-full overflow-y-auto overflow-x-hidden md:inset-0`}
     >
-      <div className="relative m-auto flex items-center justify-center  h-full w-full max-w-lg p-4 ">
+      <div className="relative m-auto flex h-full w-full  max-w-lg items-center justify-center p-4 ">
         <div
           onClick={(e) => e.stopPropagation()}
           className="relative rounded-lg bg-white p-4 shadow dark:bg-gray-800 md:p-8"

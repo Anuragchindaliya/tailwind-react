@@ -37,10 +37,10 @@ const Post = ({ post, index }: { post: PostI; index: number }) => {
       }}
       viewport={{
         once: true,
-        amount: 0
+        amount: 0,
       }}
       initial={{
-        y: 300,
+        y: 100,
         // x: "-100%",
         opacity: 0,
       }}

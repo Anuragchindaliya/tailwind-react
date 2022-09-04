@@ -33,7 +33,7 @@ const Newsletter = () => {
                   </svg>
                 </div>
                 <input
-                  className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 pl-10 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 sm:rounded-none sm:rounded-l-lg"
+                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 pl-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:rounded-none sm:rounded-l-lg"
                   placeholder="Enter your email"
                   type="email"
                   id="email"
@@ -43,7 +43,7 @@ const Newsletter = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-primary-700 border-primary-600 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full cursor-pointer rounded-lg border py-3 px-5 text-center text-sm font-medium text-white focus:ring-4 sm:rounded-none sm:rounded-r-lg"
+                  className="w-full cursor-pointer rounded-lg border border-primary-600 bg-primary-700 py-3 px-5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 sm:rounded-none sm:rounded-r-lg"
                 >
                   Subscribe
                 </button>
@@ -53,7 +53,7 @@ const Newsletter = () => {
               We care about the protection of your data.{" "}
               <a
                 href="#"
-                className="text-primary-600 dark:text-primary-500 font-medium hover:underline"
+                className="font-medium text-primary-600 hover:underline dark:text-primary-500"
               >
                 Read our Privacy Policy
               </a>
