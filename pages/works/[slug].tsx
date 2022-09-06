@@ -1,9 +1,8 @@
-import matter from "gray-matter";
-import path from "path";
-import fs from "fs";
-import React from "react";
-import { marked } from "marked";
 import { motion } from "framer-motion";
+import fs from "fs";
+import matter from "gray-matter";
+import { marked } from "marked";
+import path from "path";
 
 type SingleWorkType = {
   frontmatter: {

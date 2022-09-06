@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import React from "react";
 import { PostI } from "../../types";
 const cardVariants: Variants = {
   offscreen: {
@@ -40,7 +39,7 @@ const Post = ({ post, index }: { post: PostI; index: number }) => {
         amount: 0,
       }}
       initial={{
-        y: 100,
+        y: 50,
         // x: "-100%",
         opacity: 0,
       }}

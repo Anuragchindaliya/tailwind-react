@@ -1,10 +1,10 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useBoolean from "../Hooks/useBoolean";
 import NavLink from "./NavLink";
 import ThemeBtn from "./ThemeBtn";
-import { motion } from "framer-motion";
 const menuList = [
   {
     name: "Home",
@@ -26,6 +26,10 @@ const menuList = [
     name: "Contact",
     link: "/contact",
   },
+  {
+    name: "Experience",
+    link: "/experience",
+  },
 ];
 
 const Navbar = () => {
@@ -39,7 +43,7 @@ const Navbar = () => {
   const { pathname } = useRouter();
   useEffect(() => {
     setMenuOpen(false);
-  }, [pathname,setMenuOpen]);
+  }, [pathname, setMenuOpen]);
 
   const basePath = pathname === "/" ? pathname : "/" + pathname.split("/")[1];
 

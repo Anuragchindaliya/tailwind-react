@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useDragControls } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 const LocationIcon = () => {
   return (
     <svg
@@ -383,11 +383,14 @@ const CapsuleSlider = () => {
                   }
                 }}
                 key={i}
+                // className={
+                //   (i === 0
+                //     ? "border-gray-800 bg-gray-700 text-gray-200 dark:bg-gray-200 dark:text-gray-900"
+                //     : "bg-gray-100 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700") +
+                //   " cursor-pointer rounded-full border border-gray-300    px-2 py-1 text-base transition-all"
+                // }
                 className={
-                  (i === 0
-                    ? "border-gray-800 bg-gray-700 text-gray-200 dark:bg-gray-200 dark:text-gray-900"
-                    : "bg-gray-100 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700") +
-                  " cursor-pointer rounded-full border border-gray-300    px-2 py-1 text-base transition-all"
+                  "cursor-pointer rounded-full border border-gray-300 bg-gray-100 px-2 py-1 text-base  text-gray-800 transition-all first:border-gray-800 first:bg-gray-700 first:text-gray-200 hover:bg-gray-200 first:hover:bg-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 first:dark:bg-gray-200 first:dark:text-gray-900 dark:hover:bg-gray-700 first:dark:hover:bg-white"
                 }
               >
                 {cat.label}
