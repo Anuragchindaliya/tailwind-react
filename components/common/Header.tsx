@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useBoolean from "../Hooks/useBoolean";
 import NavLink from "./NavLink";
 import ThemeBtn from "./ThemeBtn";
@@ -106,50 +106,85 @@ const Navbar = () => {
           isMenuOpen ? "top-16 " : "-top-full"
         } absolute left-0  z-10 h-full w-full items-center justify-between   shadow-primary-900/40 transition-all lg:static lg:order-1  lg:flex lg:w-auto `}
       >
-        <ul
-          onClick={(e) => e.stopPropagation()}
-          className="mt-4 flex flex-col divide-y divide-slate-200 bg-white font-medium shadow-2xl dark:divide-slate-700 dark:bg-gray-800 dark:md:bg-gray-900  lg:mt-0 lg:flex-row lg:space-x-8 lg:divide-y-0 "
-        >
-          {menuList.map(({ name, link }, i) => {
-            return (
-              <li key={i}>
-                <NavLink
-                  href={link}
-                  className={`border-5  block border-gray-100 py-3 pr-4  pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white`}
-                  activeClassName="block rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 "
-                >
-                  {name}
-                </NavLink>
-                {basePath === link && (
-                  <motion.div
-                    layoutId="md:underline"
-                    transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-                    className="hidden h-0.5 w-full bg-primary-600 dark:bg-white md:block"
-                  />
-                )}
-              </li>
-            );
-          })}
-          {/*<li>
-                <a
-                  href="#"
-                  className="block rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700"
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-               <li>
-                <a
-                  href="#"
-                  className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
-                >
-                  Company
-                </a>
-              </li> */}
-        </ul>
+        <MenuList basePath={basePath} />
       </div>
     </>
+  );
+};
+
+const MenuList = ({ basePath }: { basePath: string }) => {
+  return (
+    <ul
+      onClick={(e) => e.stopPropagation()}
+      className="mt-4 flex flex-col divide-y divide-slate-200 bg-white font-medium shadow-2xl dark:divide-slate-700 dark:bg-gray-800 md:shadow-none  dark:md:bg-gray-900 lg:mt-0 lg:flex-row  lg:divide-y-0"
+    >
+      {menuList.map((menu, i) => {
+        return <Menu menu={menu} basePath={basePath} key={i} />;
+      })}
+      {/*<li>
+        <a
+          href="#"
+          className="block rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700"
+          aria-current="page"
+        >
+          Home
+        </a>
+      </li>
+       <li>
+        <a
+          href="#"
+          className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
+        >
+          Company
+        </a>
+      </li> */}
+    </ul>
+  );
+};
+const Menu = ({
+  menu: { name, link },
+  basePath,
+}: {
+  menu: { name: string; link: string };
+  basePath: string;
+}) => {
+  const [isHover, setHover] = useState(false);
+
+  return (
+    <li
+      className=" group relative px-3 py-1"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <NavLink
+        href={link}
+        className={`border-5 relative z-10  block border-gray-100 py-3  pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:group-hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:group-hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white`}
+        activeClassName="block relative rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 z-10"
+      >
+        {name}
+      </NavLink>
+      {isHover && (
+        <div>
+          <motion.div
+            layoutId="md:activeMenu"
+            // initial={{ scale: 0.3 }}
+            // animate={{  }}
+            // exit={{ scale: 0.3 }}
+            transition={{ type: "spring" }}
+            className="absolute left-0 top-0 z-0  h-full w-full rounded bg-primary-100 dark:bg-gray-700 dark:text-gray-400"
+          />
+        </div>
+      )}
+
+      {/* active underline */}
+      {basePath === link && (
+        <motion.div
+          layoutId="md:underline"
+          transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
+          className="relative z-10 hidden h-0.5 w-full bg-primary-600 dark:bg-white md:block"
+        />
+      )}
+    </li>
   );
 };
 
