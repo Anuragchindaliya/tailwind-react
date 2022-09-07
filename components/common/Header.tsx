@@ -152,36 +152,37 @@ const Menu = ({
 
   return (
     <li
-      className=" group relative px-3 py-1"
+      // px-3 py-1
+      className="group relative"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <NavLink
         href={link}
-        className={`border-5 relative z-10  block border-gray-100 py-3  pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:group-hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:group-hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white`}
-        activeClassName="block relative rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 z-10"
+        className={`border-5 relative z-10 block  border-gray-100  py-3  pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:group-hover:text-white lg:border-0 lg:px-4 lg:py-1 lg:hover:bg-transparent lg:group-hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white`}
+        activeClassName="block lg:px-4 lg:py-1 relative rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 z-10"
       >
-        {name}
+        <span className="relative z-50">
+          {name}
+
+          {/* active underline */}
+          {basePath === link && (
+            <motion.div
+              layoutId="md:underline"
+              transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
+              className="relative -bottom-1 z-10 hidden h-0.5 w-full bg-primary-600 dark:bg-white md:block"
+            />
+          )}
+        </span>
       </NavLink>
       {isHover && (
-        <div>
-          <motion.div
-            layoutId="md:activeMenu"
-            // initial={{ scale: 0.3 }}
-            // animate={{  }}
-            // exit={{ scale: 0.3 }}
-            transition={{ type: "spring" }}
-            className="absolute left-0 top-0 z-0  h-full w-full rounded bg-primary-100 dark:bg-gray-700 dark:text-gray-400"
-          />
-        </div>
-      )}
-
-      {/* active underline */}
-      {basePath === link && (
         <motion.div
-          layoutId="md:underline"
-          transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-          className="relative z-10 hidden h-0.5 w-full bg-primary-600 dark:bg-white md:block"
+          layoutId="md:activeMenu"
+          // initial={{ scale: 0.3 }}
+          // animate={{  }}
+          // exit={{ scale: 0.3 }}
+          transition={{ type: "spring" }}
+          className="absolute left-0 top-0 -z-0  h-full w-full rounded bg-primary-100 dark:bg-gray-700 dark:text-gray-400"
         />
       )}
     </li>
