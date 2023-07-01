@@ -1,11 +1,11 @@
-import React from "react";
-import SearchInput from "./SearchInput";
 
+import { BiLogoNodejs, BiLogoTypescript } from "react-icons/bi";
+import { FaReact } from 'react-icons/fa';
 const Hero = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className=" dark:bg-gray-900 app-h-screen flex flex-col justify-center">
       <div className="mx-auto max-w-screen-xl py-8 px-4 text-center lg:py-16 lg:px-12">
-        <a
+        {/* <a
           href="#"
           className="mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 py-1 px-1 pr-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
           role="alert"
@@ -28,16 +28,27 @@ const Hero = () => {
               clipRule="evenodd"
             />
           </svg>
-        </a>
+        </a> */}
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-          We invest in the world’s potential
+          Hi, I'm
+          <br />Anurag Chindaliya
         </h1>
-        <SearchInput />
+        {/* <SearchInput /> */}
 
-        <p className="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+        <p className="mb-8 text-xl font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-2xl xl:px-48">
+          A software engineer with 3 year of experience in web development with expertise in Frontend and intermdiate in backend .
+          <br />
         </p>
+        <div className='flex justify-center space-x-5'>
+          <FaReact className='text-gray-800 dark:text-white text-4xl' />
+          <BiLogoTypescript className='text-gray-800 dark:text-white text-4xl' />
+          <BiLogoNodejs className='text-gray-800 dark:text-white text-4xl' />
+          {/* <div className="pl-8 relative w-40">
+            <DiNodejs className='text-white absolute -top-9 text-8xl  scale-150' />
+          </div> */}
+
+        </div>
+        {/*
         <div className="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:mb-16">
           <a
             href="#"
@@ -178,7 +189,7 @@ const Hero = () => {
               </svg>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import Head from "next/head";
 // import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import BottomNav from "./common/BottomNav";
-import Footer from "./common/Footer";
 import Header from "./common/Header";
 import ProgressBar from "./common/ProgressBar";
 
@@ -11,7 +10,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   // const router = useRouter();
 
   return (
-    <div>
+    <div className="cursor-default">
       <Head>
         <title>Anurag chindaliya portfolio</title>
         <meta name="description" content="Software engineer from faridabad" />
@@ -51,7 +50,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       {children}
       {/* </motion.div>
       </AnimatePresence> */}
-      <Footer />
+      {/* <Footer /> */}
       <BottomNav />
       <ProgressBar />
     </div>

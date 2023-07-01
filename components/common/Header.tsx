@@ -11,6 +11,10 @@ const menuList = [
     link: "/",
   },
   {
+    name: "Experience",
+    link: "/experience",
+  },
+  {
     name: "Works",
     link: "/works",
   },
@@ -26,10 +30,7 @@ const menuList = [
     name: "Contact",
     link: "/contact",
   },
-  {
-    name: "Experience",
-    link: "/experience",
-  },
+
 ];
 
 const Navbar = () => {
@@ -102,9 +103,8 @@ const Navbar = () => {
         onClick={() => {
           setMenuOpen(false);
         }}
-        className={`${
-          isMenuOpen ? "top-16 " : "-top-full"
-        } absolute left-0  z-10 h-full w-full items-center justify-between   shadow-primary-900/40 transition-all lg:static lg:order-1  lg:flex lg:w-auto `}
+        className={`${isMenuOpen ? "top-16 " : "-top-full"
+          } absolute left-0  z-10 h-full w-full items-center justify-between   shadow-primary-900/40 transition-all lg:static lg:order-1  lg:flex lg:w-auto `}
       >
         <MenuList basePath={basePath} />
       </div>
@@ -197,12 +197,12 @@ const Header = () => {
           <Link href="/">
             <a className="flex items-center">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
+                src="./images/anu-logo.png"
                 className="mr-3 h-6 sm:h-9"
-                alt="Flowbite Logo"
+                alt="Anurag chindaliya logo"
               />
               <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                Anurag Chindaliya
+                Anurag
               </span>
             </a>
           </Link>

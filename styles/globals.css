@@ -45,4 +45,16 @@ body::-webkit-scrollbar-thumb:hover {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .app-h-screen{
+    height:100dvh;
+    height: 100vh;
+  }
 }

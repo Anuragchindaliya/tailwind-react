@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { motion } from "framer-motion";
 const ExtenstionIcon = (props: any) => {
   return (
     <svg
@@ -169,7 +169,7 @@ const BottomNav = () => {
     >
       <div
         className="shadow-3xl   relative flex w-full  items-center justify-between   rounded-2xl bg-gray-900  dark:bg-gray-200 lg:hidden"
-        // [&>a]:first:rounded-l-xl [&>a]:last:rounded-r-xl [&>a]:last:rounded-r-0
+      // [&>a]:first:rounded-l-xl [&>a]:last:rounded-r-xl [&>a]:last:rounded-r-0
       >
         {navList.map(({ path, icon: Icon }, i) => (
           <Link key={i} href={path}>
@@ -185,8 +185,8 @@ const BottomNav = () => {
               <Icon
                 {...(basePath === path
                   ? {
-                      className: "fill-current h-6 w-6 z-20",
-                    }
+                    className: "fill-current h-6 w-6 z-20",
+                  }
                   : { className: "stroke-current  h-6 w-6 " })}
               />
               {basePath === path && (
@@ -195,7 +195,7 @@ const BottomNav = () => {
                   // className="flex flex-col items-center  hover:text-blue-400 "
                   transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
                   className=" absolute top-0 bottom-0  m-1 rounded-xl  bg-primary-600 p-4 px-[11vw] "
-                  // className="sm:px-11 absolute bottom-0 border-gray-900 left-0 right-0 -z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 dark:border-gray-50 bg-gray-500 p-2 text-center text-3xl text-white shadow-2xl transition duration-200 ease-in hover:border-blue-500 "
+                // className="sm:px-11 absolute bottom-0 border-gray-900 left-0 right-0 -z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 dark:border-gray-50 bg-gray-500 p-2 text-center text-3xl text-white shadow-2xl transition duration-200 ease-in hover:border-blue-500 "
                 >
                   {/* <PhoneIcon />
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full border-4 opacity-50" /> */}
