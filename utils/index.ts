@@ -12,7 +12,7 @@ export const sortByDate = (a: PostDateI, b: PostDateI) => {
 };
 export const ROUTES = {
   HOME: "/",
-  PROJECT: "/project",
+  PROJECT: "/projects",
   SKILLS: "/skills",
   PROFILE: "/profile",
 } as const;

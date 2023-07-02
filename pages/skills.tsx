@@ -112,7 +112,7 @@ const skillArr = [
         data: database
     }
 ]
-const skills = () => {
+const Skills = () => {
     return (
         <section className=" dark:bg-gray-900">
             <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-16 lg:px-6">
@@ -178,4 +178,4 @@ const skills = () => {
     );
 };
 
-export default skills;
+export default Skills;

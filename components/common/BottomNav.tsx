@@ -214,10 +214,10 @@ const navList = [
   },
   {
     id: "2",
-    title: "Work",
+    title: "Project",
     icon: ProjectOutline,
     activeIcon: ProjectFill,
-    path: "/works",
+    path: ROUTES.PROJECT,
   },
   {
     id: "3",
@@ -231,7 +231,7 @@ const navList = [
     title: "User",
     icon: ProfileOutline,
     activeIcon: ProfileFill,
-    path: "/about",
+    path: ROUTES.PROFILE,
   },
 ];
 const BottomNav = () => {

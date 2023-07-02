@@ -6,6 +6,7 @@ import { Hero } from "../components/Home";
 import Project from "../components/Works/Project";
 import { PostI } from "../types";
 import { sortByDate } from "../utils";
+import Skills from "./skills";
 
 
 const Home = ({ posts }: { posts: PostI[] }) => {
@@ -18,12 +19,13 @@ const Home = ({ posts }: { posts: PostI[] }) => {
       </Head>
       <main className="relative">
         {/* <CapsuleSlider /> */}
-        <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0 "></div>
-        <div className=" relative">
+        <div className="absolute top-0 left-0 z-0 w-full h-full bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 "></div>
+        <div className="relative ">
           <Hero />
           {/* <Testimonial /> */}
           {/* <Posts posts={posts} /> */}
           <Project posts={posts} />
+          <Skills />
         </div>
       </main>
     </>
