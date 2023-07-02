@@ -2,10 +2,10 @@ import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
 import path from "path";
-import { Hero } from "../components/Home";
 import Project from "../components/Works/Project";
 import { PostI } from "../types";
 import { sortByDate } from "../utils";
+import Profile from "./profile";
 import Skills from "./skills";
 
 
@@ -21,7 +21,8 @@ const Home = ({ posts }: { posts: PostI[] }) => {
         {/* <CapsuleSlider /> */}
         <div className="absolute top-0 left-0 z-0 w-full h-full bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 "></div>
         <div className="relative ">
-          <Hero />
+          <Profile />
+          {/* <Hero /> */}
           {/* <Testimonial /> */}
           {/* <Posts posts={posts} /> */}
           <Project posts={posts} />

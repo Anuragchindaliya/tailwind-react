@@ -7,31 +7,32 @@ import { ROUTES } from "../../utils";
 import useBoolean from "../Hooks/useBoolean";
 import NavLink from "./NavLink";
 import ThemeBtn from "./ThemeBtn";
+
 const menuList = [
   {
     name: "Home",
     link: ROUTES.HOME,
   },
+  // {
+  //   name: "Experience",
+  //   link: "/experience",
+  // },
   {
-    name: "Experience",
-    link: "/experience",
-  },
-  {
-    name: "Works",
-    link: "/works",
+    name: "Projects",
+    link: ROUTES.PROJECT,
   },
   {
     name: "Skills",
     link: ROUTES.SKILLS,
   },
   {
-    name: "About",
-    link: "/about",
+    name: "Profile",
+    link: ROUTES.PROFILE,
   },
-  {
-    name: "Contact",
-    link: "/contact",
-  },
+  // {
+  //   name: "Contact",
+  //   link: "/contact",
+  // },
 
 ];
 
@@ -70,7 +71,7 @@ const Navbar = () => {
           onClick={handleMenuOpen}
           data-collapse-toggle="mobile-menu-2"
           type="button"
-          className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+          className="items-center hidden p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
           aria-controls="mobile-menu-2"
           aria-expanded="false"
         >
@@ -101,6 +102,7 @@ const Navbar = () => {
             />
           </svg> */}
         </button>
+
       </div>
       <div
         onClick={() => {
@@ -163,7 +165,7 @@ const Menu = ({
       <NavLink
         href={link}
         className={`border-5 relative z-10 block  border-gray-100  py-3  pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:group-hover:text-white lg:border-0 lg:px-4 lg:py-1 lg:hover:bg-transparent lg:group-hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white`}
-        activeClassName="block lg:px-4 lg:py-1 relative rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 z-10"
+        activeClassName="block lg:px-4 lg:py-1 relative rounded bg-primary-700 py-2 pr-4 pl-3 dark:text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700 z-10"
       >
         <span className="relative z-50">
           {name}
@@ -173,7 +175,7 @@ const Menu = ({
             <motion.div
               layoutId="md:underline"
               transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
-              className="relative -bottom-1 z-10 hidden h-0.5 w-full bg-primary-600 dark:bg-white md:block"
+              className="relative -bottom-1 z-10 hidden h-0.5 w-full bg-primary-600 bg-gray-800 dark:bg-white md:block"
             />
           )}
         </span>
@@ -185,7 +187,7 @@ const Menu = ({
           // animate={{  }}
           // exit={{ scale: 0.3 }}
           transition={{ type: "spring" }}
-          className="absolute top-0 left-0 w-full h-full rounded -z-0 bg-primary-100 dark:bg-gray-700 dark:text-gray-400"
+          className="absolute top-0 left-0 w-full h-full bg-blue-100 rounded -z-0 dark:bg-gray-700 dark:text-gray-400"
         />
       )}
     </li>

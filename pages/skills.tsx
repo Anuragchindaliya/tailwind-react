@@ -31,10 +31,10 @@ const library = [
         title: "Tailwind plugin preset",
     },
     {
-        title: "Ant Design",
+        title: "Bootstrap",
     },
     {
-        title: "Bootstrap",
+        title: "Ant Design",
     },
     {
         title: "Material UI",
