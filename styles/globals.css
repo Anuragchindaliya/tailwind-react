@@ -8,9 +8,13 @@
   overflow-y: scroll;
 }
 
+
 body::-webkit-scrollbar {
   display: none; 
 } */
+body {
+  @apply dark:bg-gray-900;
+}
 
 /* width */
 body::-webkit-scrollbar {
@@ -53,8 +57,8 @@ body::-webkit-scrollbar-thumb:hover {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
-  .app-h-screen{
-    height:100dvh;
+  .app-h-screen {
+    height: 100dvh;
     height: 100vh;
   }
 }

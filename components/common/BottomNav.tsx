@@ -2,6 +2,97 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { ROUTES } from "../../utils";
+const Skills = {
+  Fill: (props: React.SVGProps<SVGSVGElement>) => {
+    return <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      stroke="currentColor"
+      viewBox="0 -960 960 960"
+      {...props}>
+      <path
+        d="M479.825-80Q467-80 458.5-88.625T450-110v-58q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510-168v58q0 12.75-8.675 21.375Q492.649-80 479.825-80ZM110-450q-12.75 0-21.375-8.675Q80-467.351 80-480.175 80-493 88.625-501.5T110-510h58q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T168-450h-58Zm682 0q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T792-510h58q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T850-450h-58Zm-74 250-40-39q-9-9-9-21t10-22q8.311-8 21.156-8Q713-290 722-282l39 40q9 9 9 21t-9 21q-8.556 9-21.778 9T718-200Zm-518 0q-9-8.311-9-21.156Q191-234 200-243l39-39q9-9 21.218-9t21.382 9.263q8.4 8.491 8.4 21.614Q290-247 282-239l-40 40q-9 9-21 9t-21-10Zm280-98q-75 0-128.5-53.5T298-480q0-49 21-88t59-64v-148q0-24.75 17.625-42.375T438-840h84q24.75 0 42.375 17.625T582-780v148q38 25 59 64t21 88q0 75-53.5 128.5T480-298Zm-42-355q10.5-3 21-4.5t21-1.5q10.5 0 21 1.5t21 4.5v-127h-84v127Z" />
+    </svg>
+  },
+  Outline: (props: React.SVGProps<SVGSVGElement>) => {
+    return <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      stroke="currentColor"
+      viewBox="0 -960 960 960"
+      {...props}>
+      <path
+        d="M479.825-80Q467-80 458.5-88.625T450-110v-58q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510-168v58q0 12.75-8.675 21.375Q492.649-80 479.825-80ZM110-450q-12.75 0-21.375-8.675Q80-467.351 80-480.175 80-493 88.625-501.5T110-510h58q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T168-450h-58Zm682 0q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T792-510h58q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T850-450h-58Zm-74 250-40-39q-8-8-8.5-21t8.5-22q9-9 21.5-9t21.5 9l40 40q8 8 8.5 20.5T761-200q-9 9-21.5 9t-21.5-9Zm-518 0q-9-9-9-21.5t9-21.5l39-39q8-8 21-8.5t22 8.5q9 9 9 21.5t-9 21.5l-40 40q-8.442 8-20.721 8T200-200Zm280-98q-75 0-128.5-53.5T298-480q0-49 21-88t59-64v-148q0-24.75 17.625-42.375T438-840h84q24.75 0 42.375 17.625T582-780v148q38 25 59 64t21 88q0 75-53.5 128.5T480-298Zm-42-355q10.5-3 21-4.5t21-1.5q10.5 0 21 1.5t21 4.5v-127h-84v127Zm42.118 295Q531-358 566.5-393.618q35.5-35.617 35.5-86.5Q602-531 566.382-566.5q-35.617-35.5-86.5-35.5Q429-602 393.5-566.382q-35.5 35.617-35.5 86.5Q358-429 393.618-393.5q35.617 35.5 86.5 35.5ZM480-480Z" />
+    </svg>
+  }
+}
+const ProfileOutline = (props: React.SVGProps<SVGSVGElement>) => {
+  return <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+    // viewBox="0 0 24 24"
+    stroke="currentColor"
+    // height="48"
+    viewBox="0 -960 960 960"
+    // width="48"
+    {...props}>
+    <path
+      d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm260 321H220q-24.75 0-42.375-17.625T160-220v-34q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5t127.921 44.694q31.301 14.126 50.19 40.966Q800-292 800-254v34q0 24.75-17.625 42.375T740-160Zm-520-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm260-321q39 0 64.5-25.5T570-631q0-39-25.5-64.5T480-721q-39 0-64.5 25.5T390-631q0 39 25.5 64.5T480-541Zm0-90Zm0 411Z" />
+  </svg>
+}
+const ProfileFill = (props: React.SVGProps<SVGSVGElement>) => {
+  return <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+    stroke="currentColor"
+    viewBox="0 -960 960 960"
+    {...props}>
+    <path
+      d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM220-160q-25 0-42.5-17.5T160-220v-34q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v34q0 25-17.5 42.5T740-160H220Z" />
+  </svg>
+}
+const ProjectOutline = (props: React.SVGProps<SVGSVGElement>) => {
+  return <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+    // viewBox="0 0 24 24"
+    stroke="currentColor"
+    // height="48"
+    viewBox="0 -960 960 960"
+    // width="48"
+    {...props}>
+    <path
+      d="M140-120q-24 0-42-18t-18-42v-480q0-24 18-42t42-18h180v-100q0-24 18-42t42-18h200q24 0 42 18t18 42v100h180q24 0 42 18t18 42v480q0 24-18 42t-42 18H140Zm0-60h680v-480H140v480Zm240-540h200v-100H380v100ZM140-180v-480 480Zm376-240L412-316q-6 6-6 14t6 14q6 6 14 6t14-6l111-111q9-9 9-21t-9-21L439-553q-6-6-14-6t-14 6q-6 6-6 14t6 14l105 105Z" />
+  </svg>
+}
+const ProjectFill = (props: React.SVGProps<SVGSVGElement>) => {
+  return <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+    stroke="currentColor"
+    viewBox="0 -960 960 960"
+    {...props}>
+    <path
+      d="M140-120q-24 0-42-18t-18-42v-480q0-24 18-42t42-18h180v-100q0-24 18-42t42-18h200q24 0 42 18t18 42v100h180q24 0 42 18t18 42v480q0 24-18 42t-42 18H140Zm240-600h200v-100H380v100Zm136 300L412-316q-6 6-6 14t6 14q6 6 14 6t14-6l111-111q9-9 9-21t-9-21L439-553q-6-6-14-6t-14 6q-6 6-6 14t6 14l105 105Z" />
+  </svg>
+}
+const HomeOutlineComp = (props: React.SVGProps<SVGSVGElement>) => {
+  return <svg xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    // viewBox="0 0 24 24"
+    stroke="currentColor"
+    // height="48"
+    viewBox="0 -960 960 960"
+    // width="48"
+    {...props}
+  >
+    <path
+      d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm0 60q-24.75 0-42.375-17.625T160-180v-390q0-14.25 6.375-27T184-618l260-195q8.295-6 17.344-9 9.049-3 18.853-3 9.803 0 18.717 3 8.915 3 17.086 9l260 195q11.25 8.25 17.625 21T800-570v390q0 24.75-17.625 42.375T740-120H530v-250H430v250H220Zm260-353Z" />
+  </svg>
+}
+const HomeFillComp = (props: React.SVGProps<SVGSVGElement>) => {
+  return <svg
+    xmlns="http://www.w3.org/2000/svg"
+    // height="48" 
+    stroke="currentColor"
+
+    viewBox="0 -960 960 960"
+    //  width="48"
+    {...props}
+  >
+    <path
+      d="M220-120q-24.75 0-42.375-17.625T160-180v-390q0-14.25 6.375-27T184-618l260-195q8.295-6 17.344-9 9.049-3 18.853-3 9.803 0 18.717 3 8.915 3 17.086 9l260 195q11.25 8.25 17.625 21T800-570v390q0 24.75-17.625 42.375T740-120H560v-280H400v280H220Z" />
+  </svg>
+}
 const ExtenstionIcon = (props: any) => {
   return (
     <svg
@@ -83,7 +174,7 @@ const PhoneIcon = (props: any) => {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      // className="h-6 w-6"
+      // className="w-6 h-6"
       {...prop}
     >
       <path
@@ -117,36 +208,44 @@ const navList = [
   {
     id: "1",
     title: "Home",
-    icon: ExtenstionIcon,
-    path: "/",
+    icon: HomeOutlineComp,
+    activeIcon: HomeFillComp,
+    path: ROUTES.HOME,
   },
   {
     id: "2",
-    title: "Search",
-    icon: SearchIcon,
+    title: "Work",
+    icon: ProjectOutline,
+    activeIcon: ProjectFill,
     path: "/works",
   },
   {
     id: "3",
-    title: "Save",
-    icon: SaveIcon,
-    path: "/services",
+    title: "Skills",
+    icon: Skills.Outline,
+    activeIcon: Skills.Fill,
+    path: ROUTES.SKILLS,
   },
   {
     id: "4",
     title: "User",
-    icon: PhoneIcon,
+    icon: ProfileOutline,
+    activeIcon: ProfileFill,
     path: "/about",
   },
 ];
 const BottomNav = () => {
   const [lastYPos, setLastYPos] = React.useState(0);
-  const [shouldShowActions, setShouldShowActions] = React.useState(false);
+  const [shouldShowActions, setShouldShowActions] = React.useState(true);
   const { pathname } = useRouter();
   const basePath = pathname === "/" ? pathname : "/" + pathname.split("/")[1];
 
   React.useEffect(() => {
     function handleScroll() {
+      // if (window.screenY) {
+      //   setShouldShowActions(true);
+      //   return;
+      // }
       const yPos = window.scrollY;
       const isScrollingUp = yPos < lastYPos;
 
@@ -165,40 +264,42 @@ const BottomNav = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: shouldShowActions ? 1 : 0 }}
       transition={{ opacity: { duration: 0.3 } }}
-      className="fixed bottom-0 flex w-full justify-center px-2 py-1 text-gray-400 dark:text-gray-500"
+      className="fixed bottom-0 z-10 flex justify-center w-full px-2 py-1 text-gray-400 dark:text-gray-500"
     >
       <div
-        className="shadow-3xl   relative flex w-full  items-center justify-between   rounded-2xl bg-gray-900  dark:bg-gray-200 lg:hidden"
+        className="relative flex items-center justify-between w-full bg-gray-900 border border-gray-600 shadow rounded-2xl dark:bg-gray-800 lg:hidden"
       // [&>a]:first:rounded-l-xl [&>a]:last:rounded-r-xl [&>a]:last:rounded-r-0
       >
-        {navList.map(({ path, icon: Icon }, i) => (
+        {navList.map(({ path, icon: Icon, activeIcon: ActiveIcon }, i) => (
           <Link key={i} href={path}>
             <a
               className={
                 (basePath === path
-                  ? "text-white "
-                  : "hover:bg-gray-700  hover:text-blue-400 dark:hover:bg-gray-300 dark:hover:text-blue-800") +
+                  ? "text-white fill-gray-100"
+                  : "hover:bg-gray-700 fill-gray-400  hover:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300") +
                 "  m-1  flex flex-1 flex-col items-center rounded-xl  p-2 transition   duration-200  ease-in"
                 // first:rounded-l-xl last:rounded-r-xl last:rounded-r-0
               }
             >
-              <Icon
+
+              {basePath === path ? <ActiveIcon className="z-20 w-6 h-6 fill-current" /> : <Icon className="z-20 w-6 h-6 fill-current" />}
+              {/* <Icon
                 {...(basePath === path
                   ? {
-                    className: "fill-current h-6 w-6 z-20",
+                    className: "stroke-current fill-current h-6 w-6 z-20",
                   }
                   : { className: "stroke-current  h-6 w-6 " })}
-              />
+              /> */}
               {basePath === path && (
                 <motion.div
                   layoutId="activeMobileNav"
-                  // className="flex flex-col items-center  hover:text-blue-400 "
-                  transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-                  className=" absolute top-0 bottom-0  m-1 rounded-xl  bg-primary-600 p-4 px-[11vw] "
-                // className="sm:px-11 absolute bottom-0 border-gray-900 left-0 right-0 -z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 dark:border-gray-50 bg-gray-500 p-2 text-center text-3xl text-white shadow-2xl transition duration-200 ease-in hover:border-blue-500 "
+                  // className="flex flex-col items-center hover:text-blue-400 "
+                  transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
+                  className=" absolute top-0 bottom-0  m-1 rounded-xl  bg-gray-600 p-4 px-[11vw] "
+                // className="absolute bottom-0 left-0 right-0 flex items-center justify-center p-2 text-3xl text-center text-white transition duration-200 ease-in bg-gray-500 border-2 border-gray-900 rounded-full shadow-2xl sm:px-11 -z-10 h-11 w-11 dark:border-gray-50 hover:border-blue-500 "
                 >
                   {/* <PhoneIcon />
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full border-4 opacity-50" /> */}
+          <span className="absolute inline-flex w-full h-full border-4 rounded-full opacity-50 animate-ping" /> */}
                 </motion.div>
               )}
             </a>

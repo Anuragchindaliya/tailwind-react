@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useDarkMode from "../Hooks/useDarkMode";
 import NoSsr from "./NoSsr";
 const ThemeBtn = () => {
@@ -27,7 +27,7 @@ const SlideToogle = ({ isDarkMode, toggle }: ToogleI) => {
       // suppressHydrationWarning
       title={isDarkMode ? "Go Dark Mode" : "Go Light Mode"}
       className={
-        " relative m-2 inline-flex h-7 w-14 cursor-pointer items-center rounded-full bg-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-800 dark:border-gray-600  dark:bg-blue-600 dark:focus:ring-blue-300"
+        " relative m-2 inline-flex h-7 w-14 cursor-pointer items-center rounded-full bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-800 dark:border-gray-600  dark:bg-gray-600 dark:focus:ring-gray-300"
       }
       type="button"
       onClick={toggle}
@@ -40,7 +40,7 @@ const SlideToogle = ({ isDarkMode, toggle }: ToogleI) => {
         <svg
           aria-hidden="true"
           data-toggle-icon="sun"
-          className="h-4 w-4 dark:hidden "
+          className="w-4 h-4 dark:hidden "
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const SlideToogle = ({ isDarkMode, toggle }: ToogleI) => {
         <svg
           aria-hidden="true"
           data-toggle-icon="moon"
-          className="hidden h-4 w-4 dark:block"
+          className="hidden w-4 h-4 dark:block"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -75,14 +75,14 @@ const BoxiBtn = ({ toggle, isDarkMode }: ToogleI) => {
       // suppressHydrationWarning
       onClick={toggle}
       type="button"
-      className="toggle-dark-state-example mr-2 flex items-center rounded-lg border border-gray-200 bg-white p-2 text-xs font-medium text-gray-700 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-500"
+      className="flex items-center p-2 mr-2 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-lg toggle-dark-state-example hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-500"
       title={isDarkMode ? "Dark Mode" : "Light Mode"}
     >
       <NoSsr>
         <svg
           aria-hidden="true"
           data-toggle-icon="moon"
-          className="hidden h-4 w-4 dark:block"
+          className="hidden w-4 h-4 dark:block"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const BoxiBtn = ({ toggle, isDarkMode }: ToogleI) => {
         <svg
           aria-hidden="true"
           data-toggle-icon="sun"
-          className="h-4 w-4 dark:hidden"
+          className="w-4 h-4 dark:hidden"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,7 @@ id: 1
 title: "Cytrellis Ellacor"
 date: "March 12, 2023"
 timeline: "March 12, 2023 - ongoing"
-excerpt: "This plantform connect physician and patient for skins problems, where patient can apply for appointment"
+excerpt: "This platform connect physician and patient for skins problems, where patient can apply for appointment"
 cover_image: "/images/posts/img7.jpg"
 technology:
   [

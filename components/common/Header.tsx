@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
+import { MoreVertical } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { ROUTES } from "../../utils";
 import useBoolean from "../Hooks/useBoolean";
 import NavLink from "./NavLink";
 import ThemeBtn from "./ThemeBtn";
 const menuList = [
   {
     name: "Home",
-    link: "/",
+    link: ROUTES.HOME,
   },
   {
     name: "Experience",
@@ -19,8 +21,8 @@ const menuList = [
     link: "/works",
   },
   {
-    name: "Services",
-    link: "/services",
+    name: "Skills",
+    link: ROUTES.SKILLS,
   },
   {
     name: "About",
@@ -68,13 +70,14 @@ const Navbar = () => {
           onClick={handleMenuOpen}
           data-collapse-toggle="mobile-menu-2"
           type="button"
-          className="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+          className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
           aria-controls="mobile-menu-2"
           aria-expanded="false"
         >
           <span className="sr-only">Open main menu</span>
-          <svg
-            className="h-6 w-6"
+          <MoreVertical />
+          {/* <svg
+            className="w-6 h-6"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +89,7 @@ const Navbar = () => {
             />
           </svg>
           <svg
-            className="hidden h-6 w-6"
+            className="hidden w-6 h-6"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +99,7 @@ const Navbar = () => {
               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
               clipRule="evenodd"
             />
-          </svg>
+          </svg> */}
         </button>
       </div>
       <div
@@ -116,7 +119,7 @@ const MenuList = ({ basePath }: { basePath: string }) => {
   return (
     <ul
       onClick={(e) => e.stopPropagation()}
-      className="mt-4 flex flex-col divide-y divide-slate-200 bg-white font-medium shadow-2xl dark:divide-slate-700 dark:bg-gray-800 md:shadow-none  dark:md:bg-gray-900 lg:mt-0 lg:flex-row  lg:divide-y-0"
+      className="flex flex-col mt-4 font-medium bg-white divide-y shadow-2xl divide-slate-200 dark:divide-slate-700 dark:bg-gray-800 md:shadow-none dark:md:bg-gray-900 lg:mt-0 lg:flex-row lg:divide-y-0"
     >
       {menuList.map((menu, i) => {
         return <Menu menu={menu} basePath={basePath} key={i} />;
@@ -124,7 +127,7 @@ const MenuList = ({ basePath }: { basePath: string }) => {
       {/*<li>
         <a
           href="#"
-          className="block rounded bg-primary-700 py-2 pr-4 pl-3 text-white dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700"
+          className="block py-2 pl-3 pr-4 text-white rounded bg-primary-700 dark:text-white lg:bg-transparent lg:p-0 lg:text-primary-700"
           aria-current="page"
         >
           Home
@@ -133,7 +136,7 @@ const MenuList = ({ basePath }: { basePath: string }) => {
        <li>
         <a
           href="#"
-          className="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
+          className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:bg-transparent lg:dark:hover:text-white"
         >
           Company
         </a>
@@ -153,7 +156,7 @@ const Menu = ({
   return (
     <li
       // px-3 py-1
-      className="group relative"
+      className="relative group"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -182,7 +185,7 @@ const Menu = ({
           // animate={{  }}
           // exit={{ scale: 0.3 }}
           transition={{ type: "spring" }}
-          className="absolute left-0 top-0 -z-0  h-full w-full rounded bg-primary-100 dark:bg-gray-700 dark:text-gray-400"
+          className="absolute top-0 left-0 w-full h-full rounded -z-0 bg-primary-100 dark:bg-gray-700 dark:text-gray-400"
         />
       )}
     </li>
@@ -193,15 +196,15 @@ const Header = () => {
   return (
     <header>
       <nav className="border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-900 lg:px-6">
-        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
           <Link href="/">
             <a className="flex items-center">
               <img
                 src="./images/anu-logo.png"
-                className="mr-3 h-6 sm:h-9"
+                className="h-6 mr-3 sm:h-9"
                 alt="Anurag chindaliya logo"
               />
-              <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                 Anurag
               </span>
             </a>

@@ -3,11 +3,11 @@ import { BiLogoNodejs, BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from 'react-icons/fa';
 const Hero = () => {
   return (
-    <section className=" dark:bg-gray-900 app-h-screen flex flex-col justify-center">
-      <div className="mx-auto max-w-screen-xl py-8 px-4 text-center lg:py-16 lg:px-12">
+    <section className="flex flex-col justify-center dark:bg-gray-900 app-h-screen">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
         {/* <a
           href="#"
-          className="mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 py-1 px-1 pr-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
           role="alert"
         >
           <span className="mr-3 rounded-full bg-primary-600 px-4 py-1.5 text-xs text-white">
@@ -17,7 +17,7 @@ const Hero = () => {
             Flowbite is out! See what's new
           </span>
           <svg
-            className="ml-2 h-5 w-5"
+            className="w-5 h-5 ml-2"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -39,24 +39,24 @@ const Hero = () => {
           A software engineer with 3 year of experience in web development with expertise in Frontend and intermdiate in backend .
           <br />
         </p>
-        <div className='flex justify-center space-x-5'>
-          <FaReact className='text-gray-800 dark:text-white text-4xl' />
-          <BiLogoTypescript className='text-gray-800 dark:text-white text-4xl' />
-          <BiLogoNodejs className='text-gray-800 dark:text-white text-4xl' />
-          {/* <div className="pl-8 relative w-40">
-            <DiNodejs className='text-white absolute -top-9 text-8xl  scale-150' />
+        <div className='flex justify-center space-x-5 mb-52 md:mb-20'>
+          <FaReact className='text-4xl text-gray-800 dark:text-white' />
+          <BiLogoTypescript className='text-4xl text-gray-800 dark:text-white' />
+          <BiLogoNodejs className='text-4xl text-gray-800 dark:text-white' />
+          {/* <div className="relative w-40 pl-8">
+            <DiNodejs className='absolute text-white scale-150 -top-9 text-8xl' />
           </div> */}
 
         </div>
         {/*
-        <div className="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:mb-16">
+        <div className="flex flex-col mb-8 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:mb-16">
           <a
             href="#"
-            className="inline-flex items-center justify-center rounded-lg bg-primary-700 py-3 px-5 text-center text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
             Learn more
             <svg
-              className="ml-2 -mr-1 h-5 w-5"
+              className="w-5 h-5 ml-2 -mr-1"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -70,10 +70,10 @@ const Hero = () => {
           </a>
           <a
             href="#"
-            className="inline-flex items-center justify-center rounded-lg border border-gray-300 py-3 px-5 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
             <svg
-              className="mr-2 -ml-1 h-5 w-5"
+              className="w-5 h-5 mr-2 -ml-1"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -83,14 +83,14 @@ const Hero = () => {
             Watch video
           </a>
         </div>
-        <div className="mx-auto px-4 text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-          <span className="font-semibold uppercase text-gray-400">
+        <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
+          <span className="font-semibold text-gray-400 uppercase">
             FEATURED IN
           </span>
-          <div className="mt-8 flex flex-wrap items-center justify-center text-gray-500 sm:justify-between">
+          <div className="flex flex-wrap items-center justify-center mt-8 text-gray-500 sm:justify-between">
             <a
               href="#"
-              className="mr-5 mb-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0"
+              className="mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0"
             >
               <svg
                 className="h-8"
@@ -138,7 +138,7 @@ const Hero = () => {
             </a>
             <a
               href="#"
-              className="mr-5 mb-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0"
+              className="mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0"
             >
               <svg
                 className="h-11"
@@ -162,7 +162,7 @@ const Hero = () => {
             </a>
             <a
               href="#"
-              className="mr-5 mb-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0"
+              className="mb-5 mr-5 hover:text-gray-800 dark:hover:text-gray-400 lg:mb-0"
             >
               <svg
                 className="h-11"

@@ -43,7 +43,7 @@ const experienceData = [
 const experience = () => {
   return (
     <section className=" dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl py-8 px-4 sm:py-16 lg:px-6">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-16 lg:px-6">
         <ol
           className="relative "
         // border-l border-gray-200 dark:border-gray-700
@@ -54,28 +54,28 @@ const experience = () => {
               {exps.length !== i + 1 && (
                 <div className="absolute left-0 top-2 h-full w-0.5 bg-gray-300 dark:bg-gray-600" />
               )}
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-400">
+              <time className="mb-1 text-xs font-normal leading-none text-gray-400 sm:text-sm dark:text-gray-400">
                 {exp.time}
               </time>
-              <div className="flex justify-between flex-wrap my-2">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white ">
+              <div className="flex flex-wrap justify-between">
+                <h3 className="text-base font-semibold text-gray-900 sm:text-2xl dark:text-white ">
                   {exp.title}
                 </h3>
-                <div className="text-gray-900 dark:text-gray-300 flex space-x-2">
-                  <Landmark className="w-4" />
-                  <span>{exp.company}</span>
+                <div className="flex items-center space-x-2 text-gray-900 dark:text-gray-300">
+                  <Landmark className="w-3 sm:w-4" />
+                  <span className="text-sm sm:text-base">{exp.company}</span>
                 </div>
               </div>
-              <p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
+              <p className="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
                 {exp.desc}
               </p>
               {/* <a
                 href="#"
-                className="inline-flex items-center rounded-lg border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
               >
                 Learn more{" "}
                 <svg
-                  className="ml-2 h-3 w-3"
+                  className="w-3 h-3 ml-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,11 +105,11 @@ const experience = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center rounded-lg border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
             >
               Learn more{" "}
               <svg
-                className="ml-2 h-3 w-3"
+                className="w-3 h-3 ml-2"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,11 +139,11 @@ const experience = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center rounded-lg border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
             >
               Learn more{" "}
               <svg
-                className="ml-2 h-3 w-3"
+                className="w-3 h-3 ml-2"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
