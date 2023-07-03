@@ -264,10 +264,10 @@ const BottomNav = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: shouldShowActions ? 1 : 0 }}
       transition={{ opacity: { duration: 0.3 } }}
-      className="fixed bottom-0 z-10 flex justify-center w-full px-2 py-1 text-gray-400 dark:text-gray-500"
+      className="fixed bottom-0 z-10 flex justify-center w-full px-2 py-1 "
     >
       <div
-        className="relative flex items-center justify-between w-full bg-gray-900 border border-gray-600 shadow rounded-2xl dark:bg-gray-800 lg:hidden"
+        className="relative flex items-center justify-between w-full text-gray-400 border border-gray-300 shadow bg-gray-50 dark:border-gray-600 dark:text-gray-500 rounded-2xl dark:bg-gray-800 lg:hidden"
       // [&>a]:first:rounded-l-xl [&>a]:last:rounded-r-xl [&>a]:last:rounded-r-0
       >
         {navList.map(({ path, icon: Icon, activeIcon: ActiveIcon }, i) => (
@@ -275,9 +275,9 @@ const BottomNav = () => {
             <a
               className={
                 (basePath === path
-                  ? "text-white fill-gray-100"
-                  : "hover:bg-gray-700 fill-gray-400  hover:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300") +
-                "  m-1  flex flex-1 flex-col items-center rounded-xl  p-2 transition   duration-200  ease-in"
+                  ? "text-gray-800 dark:text-white "
+                  : "hover:bg-gray-200/75 fill-gray-400  hover:text-gray-600 dark:hover:bg-gray-700 dark:hover:text-gray-300") +
+                "  m-1  flex flex-1 flex-col items-center rounded-xl p-2 transition duration-200 ease-in"
                 // first:rounded-l-xl last:rounded-r-xl last:rounded-r-0
               }
             >
@@ -295,7 +295,7 @@ const BottomNav = () => {
                   layoutId="activeMobileNav"
                   // className="flex flex-col items-center hover:text-blue-400 "
                   transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-                  className=" absolute top-0 bottom-0  m-1 rounded-xl  bg-gray-600 p-4 px-[11vw] "
+                  className=" absolute top-0 bottom-0  m-1 rounded-xl bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 p-4 px-[11vw] "
                 // className="absolute bottom-0 left-0 right-0 flex items-center justify-center p-2 text-3xl text-center text-white transition duration-200 ease-in bg-gray-500 border-2 border-gray-900 rounded-full shadow-2xl sm:px-11 -z-10 h-11 w-11 dark:border-gray-50 hover:border-blue-500 "
                 >
                   {/* <PhoneIcon />
