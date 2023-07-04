@@ -9,8 +9,10 @@
     "lint": "next lint",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "build-sb": "storybook build -s public",
+    "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.4",
