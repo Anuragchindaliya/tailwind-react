@@ -1,10 +1,9 @@
-import React from "react";
 const Maintenance = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-md py-8 px-4 text-center lg:py-16 lg:px-12">
+    <section className="h-[calc(100vh-64px)] bg-white dark:bg-gray-900">
+      <div className="max-w-screen-md px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
         <svg
-          className="mx-auto mb-4 h-10 w-10 text-gray-400"
+          className="w-10 h-10 mx-auto mb-4 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
@@ -14,10 +13,12 @@ const Maintenance = () => {
           />
         </svg>
         <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:mb-6 xl:text-6xl">
-          Under Maintenance
+          Page Not Found
+          {/* Under Maintenance */}
         </h1>
         <p className="font-light text-gray-500 dark:text-gray-400 md:text-lg xl:text-xl">
-          Our Enterprise administrators are performing scheduled maintenance.
+          Oops! The page you're looking for could not be found.
+          {/* Our Enterprise administrators are performing scheduled maintenance. */}
         </p>
       </div>
     </section>
@@ -26,9 +27,9 @@ const Maintenance = () => {
 const ServerError = () => {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-sm text-center">
-          <h1 className="mb-4 text-7xl font-extrabold tracking-tight text-primary-600 dark:text-primary-500 lg:text-9xl">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+        <div className="max-w-screen-sm mx-auto text-center">
+          <h1 className="mb-4 font-extrabold tracking-tight text-7xl text-primary-600 dark:text-primary-500 lg:text-9xl">
             500
           </h1>
           <p className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -46,7 +47,7 @@ const Notfound = () => {
   return (
     <>
       <Maintenance />
-      <ServerError />
+      {/* <ServerError /> */}
     </>
   );
 };

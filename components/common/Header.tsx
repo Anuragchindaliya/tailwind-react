@@ -3,11 +3,12 @@ import { MoreVertical } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import darkLogo from "../../assets/images/anu-tex-black-logo.png";
+import lightLogo from "../../assets/images/anu-tex-white-logo.png";
 import { ROUTES } from "../../utils";
 import useBoolean from "../Hooks/useBoolean";
 import NavLink from "./NavLink";
 import ThemeBtn from "./ThemeBtn";
-
 const menuList = [
   {
     name: "Home",
@@ -202,11 +203,18 @@ const Header = () => {
           <Link href="/">
             <a className="flex items-center">
               <img
-                src="./images/anu-logo.png"
-                className="h-6 mr-3 sm:h-9"
+                // src="./images/anu-logo.png"
+                src={darkLogo.src}
+                className="h-6 mr-3 sm:h-9 dark:hidden"
                 alt="Anurag chindaliya logo"
               />
-              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <img
+                // src="./images/anu-logo.png"
+                src={lightLogo.src}
+                className="hidden h-6 mr-3 sm:h-9 dark:block"
+                alt="Anurag chindaliya logo"
+              />
+              <span className="self-center text-xl font-semibold sr-only whitespace-nowrap dark:text-white">
                 Anurag
               </span>
             </a>

@@ -6,7 +6,7 @@ const experienceData = [
     title: "Software Engineer",
     company: "Amantya Technologies",
     location: "Gurugram",
-    desc: "Converted Figma UI to reusable components. Integrated third-party library and REST API into applications. Developed Application in ReactJS with Testers and Backend team.",
+    desc: "I translated Figma Design into fully responsive, rich accessible, reusable components, created a tailwind reusable configuration theme preset for seamless integration, integrated third-party libraries, led a team of front-end developers for timely project delivery, actively participated in code reviews, collaborated with cross-functional teams for high-performance applications, implemented Jest for test cases and coverage reports, and utilized msw for a mock API and shared responses with the backend team.",
     link: "",
   },
   {
@@ -14,7 +14,7 @@ const experienceData = [
     title: "Web Developer",
     company: "Web2Rise",
     location: "Faridabad",
-    desc: "Developed web solution in ReactJS, Php and WordPress. Manage  Backend-services in PHP and design relational database with MySQL.",
+    desc: "Developed web solutions using ReactJS with efficient state management (Context API and Redux), and implemented backend in NodeJS and PHP using MySQL and MongoDB.",
     link: "",
   },
   {
@@ -28,7 +28,7 @@ const experienceData = [
     time: "From June 2019 - Sep 2019 ",
     title: "Web Designer",
     company: "AbacusDesk IT",
-    desc: "Designed responsive pages from PSD to code using CSS and CSS frameworks. Customized themes of existing WordPress websites.",
+    desc: "Created responsive and interactive pages from PSD to code using CSS frameworks (Bootstrap) and jQuery, while customizing and extending design and features using PHP, HTML, CSS, JavaScript, and MySql database.",
     link: "",
   },
   {
