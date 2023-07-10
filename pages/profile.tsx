@@ -1,9 +1,19 @@
+import { Button } from "@/components/ui/button";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { CalendarIcon } from "lucide-react";
 import { BiLogoNodejs, BiLogoTypescript } from "react-icons/bi";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin, FaReact } from 'react-icons/fa';
+
 const Profile = () => {
   return (
     <section className="flex flex-col justify-center dark:bg-gray-900 app-h-screen">
+
       <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
           Hi, I'm
           <br />Anurag Chindaliya
@@ -14,10 +24,84 @@ const Profile = () => {
           A software engineer with 3 year of experience in web development with expertise in Frontend and intermdiate in backend .
           <br />
         </p>
+
         <div className='flex justify-center space-x-5 md:mb-14'>
-          <FaReact className='text-4xl text-gray-800 dark:text-white' />
-          <BiLogoTypescript className='text-4xl text-gray-800 dark:text-white' />
-          <BiLogoNodejs className='text-4xl text-gray-800 dark:text-white' />
+          <HoverCard>
+            <HoverCardTrigger>
+              <Button variant="link" className="p-0"><FaReact className='text-4xl text-gray-800 dark:text-white' /></Button>
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <div className="flex justify-between space-x-4">
+                <FaReact className='text-4xl text-gray-800 dark:text-white' />
+                <div className="space-y-1 text-left">
+                  <h4 className="text-sm font-semibold">@reactjs</h4>
+                  <p className="text-sm">
+                    React is a JavaScript library for creating user interfaces.
+                  </p>
+                  <div className="flex items-center pt-2">
+                    <CalendarIcon className="w-4 h-4 mr-2 opacity-70" />{" "}
+                    <span className="text-xs text-muted-foreground">
+                      Release : 29 May 2013
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger>
+              <Button variant="link" className="p-0">
+                <BiLogoTypescript className='p-0 text-4xl text-gray-800  dark:text-white' />
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <div className="flex justify-between space-x-4">
+                <BiLogoTypescript className='text-4xl text-gray-800 dark:text-white' />
+                <div className="space-y-1 text-left">
+                  <h4 className="text-sm font-semibold">@typescript</h4>
+                  <p className="text-sm">
+                    TypeScript is a language for application scale JavaScript development.
+                  </p>
+                  <div className="flex items-center pt-2">
+                    <CalendarIcon className="w-4 h-4 mr-2 opacity-70" />{" "}
+                    <span className="text-xs text-muted-foreground">
+                      Release : 1 October 2012
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger>
+              <Button variant="link" className="p-0">
+                <BiLogoNodejs className='text-4xl text-gray-800 dark:text-white' />
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent>
+              <div className="flex justify-between space-x-4">
+                <BiLogoNodejs className='text-4xl text-gray-800 dark:text-white' />
+                <div className="space-y-1 text-left">
+                  <h4 className="text-sm font-semibold">@nodejs</h4>
+                  <p className="text-sm">
+                    Node.js is an open source server environment
+                  </p>
+                  <div className="flex items-center pt-2">
+                    <CalendarIcon className="w-4 h-4 mr-2 opacity-70" />{" "}
+                    <span className="text-xs text-muted-foreground">
+                      Release : 27 May 2009
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+
+
+
+
 
         </div>
 
@@ -25,7 +109,7 @@ const Profile = () => {
           {/* <span className="font-semibold text-gray-400 uppercase">
             FEATURED IN
           </span> */}
-          <div className="flex flex-wrap items-center justify-center mt-8 text-gray-500 sm:justify-between">
+          <div className="relative z-10 flex flex-wrap items-center justify-center mt-8 text-gray-500 sm:justify-between">
             <a
               href="https://www.linkedin.com/in/anurag-chindaliya/"
               target="_blank"

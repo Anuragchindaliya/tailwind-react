@@ -25,6 +25,11 @@ const Home = ({ posts }: { posts: PostI[] }) => {
           {/* <Hero /> */}
           {/* <Testimonial /> */}
           {/* <Posts posts={posts} /> */}
+          <div className="relative w-full max-w-lg bg-red-700 ">
+            <div className="absolute top-0 w-20 h-10 rounded-full bg-purple-300/50 dark:bg-purple-900 md:w-60 md:h-60 mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-70 animate-blob"></div>
+            <div className="absolute top-0 w-20 h-10 rounded-full left-1/2 bg-yellow-300/50 dark:bg-yellow-900 md:w-60 md:h-60 mix-blend-multiply filter blur-xl opacity-70 animate-blob dark:mix-blend-screen animation-delay-2000"></div>
+            <div className="absolute w-20 h-10 rounded-full left-1/2 bg-pink-300/50 dark:bg-pink-900 -bottom-8 md:w-60 md:h-60 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 dark:mix-blend-screen"></div>
+          </div>
           <Project posts={posts} />
           <Skills />
         </div>
