@@ -8,11 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "storybook build -s public",
-    "build-sb": "build-storybook -s public",
-    "serve-storybook": "serve storybook-static"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.3",
